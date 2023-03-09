@@ -214,7 +214,6 @@ async function getTokenMetadata() {
           tokenName = token.name;
           tokenSymbol = token.symbol;
           tokenLogo = token.json?.image;
-
     }
     else {
         const provider = await new TokenListProvider().resolve();
