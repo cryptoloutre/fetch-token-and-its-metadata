@@ -155,29 +155,29 @@ import { ENV, TokenListProvider } from "@solana/spl-token-registry";
 We import first what we need.
 
 ```typescript
-    const mintAddress = new PublicKey("paste-the-token-address-here");
+const mintAddress = new PublicKey("paste-the-token-address-here");
 
-    let tokenName;
-    let tokenSymbol;
-    let tokenLogo;
+let tokenName;
+let tokenSymbol;
+ let tokenLogo;
 ```
 We define the address of the token from which we want to fetch the metadata and create the variables that will store the desired information.
 
 ```typescript
-    const provider = await new TokenListProvider().resolve();
-    const tokenList = provider.filterByChainId(ENV.MainnetBeta).getList();
-    const tokenMap = tokenList.reduce((map, item) => {
-        map.set(item.address, item);
-            return map;
-        }, new Map());
+const provider = await new TokenListProvider().resolve();
+const tokenList = provider.filterByChainId(ENV.MainnetBeta).getList();
+const tokenMap = tokenList.reduce((map, item) => {
+  map.set(item.address, item);
+    return map;
+  }, new Map());
 ```
 Here we fetch all the tokens and their metadata in the Solana Labs Token List and store them in `tokenList`. With this `tokenList`, we do a mapping between the token mint address (in this list the token mint address is in Base58) and the metadata and store this map in `tokenMap`.
 
 ```typescript
-    const token = tokenMap.get(mintAddress.toBase58());
-    tokenName = token.name;
-    tokenSymbol = token.symbol;
-    tokenLogo = token.logoURI;
+const token = tokenMap.get(mintAddress.toBase58());
+tokenName = token.name;
+tokenSymbol = token.symbol;
+tokenLogo = token.logoURI;
 ```
 
 We get our token in the `tokenMap`. `token` contains the information you need. Here we get the token's name, symbol and logo.
