@@ -49,9 +49,9 @@ async function getTokenMetadata() {
 
     if (metadataAccountInfo) {
           const token = await metaplex.nfts().findByMint({ mintAddress: mintAddress });
-          tokenName= token.name;
-          tokenSymbol= token.symbol;
-          tokenLogo= token.json.image;
+          tokenName = token.name;
+          tokenSymbol = token.symbol;
+          tokenLogo = token.json.image;
     }
 }
 ```
@@ -106,9 +106,9 @@ If `metadataAccountInfo` is not equal to `null`, the `Metadata Account` exist an
 ```typescript
 if (metadataAccountInfo) {
     const token = await metaplex.nfts().findByMint({ mintAddress: mintAddress });
-    tokenName= token.name;
-    tokenSymbol= token.symbol;
-    tokenLogo= token.json.image;
+    tokenName = token.name;
+    tokenSymbol = token.symbol;
+    tokenLogo = token.json.image;
     }
 ```
 We check if `metadataAccountInfo` is equal to `null`. If it is not, we can use the `findByMint` method. This method returns an [`Nft` object](https://github.com/metaplex-foundation/js#the-nft-model) which contains all the information you need. Here we get the token's name, symbol and logo.
@@ -140,9 +140,9 @@ async function getTokenMetadata() {
         }, new Map());
 
     const token = tokenMap.get(mintAddress.toBase58());
-    tokenName= token.name;
-    tokenSymbol= token.symbol;
-    tokenLogo= token.logoURI;
+    tokenName = token.name;
+    tokenSymbol = token.symbol;
+    tokenLogo = token.logoURI;
 }
 ```
 Okay let’s step through it:
@@ -175,9 +175,9 @@ Here we fetch all the tokens and their metadata in the Solana Labs Token List an
 
 ```typescript
     const token = tokenMap.get(mintAddress.toBase58());
-    tokenName= token.name;
-    tokenSymbol= token.symbol;
-    tokenLogo= token.logoURI;
+    tokenName = token.name;
+    tokenSymbol = token.symbol;
+    tokenLogo = token.logoURI;
 ```
 
 We get our token in the `tokenMap`. `token` contains the information you need. Here we get the token's name, symbol and logo.
@@ -211,9 +211,9 @@ async function getTokenMetadata() {
 
     if (metadataAccountInfo) {
           const token = await metaplex.nfts().findByMint({ mintAddress: mintAddress });
-          tokenName= token.name;
-          tokenSymbol= token.symbol;
-          tokenLogo= token.json?.image;
+          tokenName = token.name;
+          tokenSymbol = token.symbol;
+          tokenLogo = token.json?.image;
 
     }
     else {
@@ -227,9 +227,9 @@ async function getTokenMetadata() {
 
         const token = tokenMap.get(mintAddress.toBase58());
 
-        tokenName= token.name;
-        tokenSymbol= token.symbol;
-        tokenLogo= token.logoURI;
+        tokenName = token.name;
+        tokenSymbol = token.symbol;
+        tokenLogo = token.logoURI;
     }
 }
 ```
