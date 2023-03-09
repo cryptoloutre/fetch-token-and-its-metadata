@@ -159,7 +159,7 @@ const mintAddress = new PublicKey("paste-the-token-address-here");
 
 let tokenName;
 let tokenSymbol;
- let tokenLogo;
+let tokenLogo;
 ```
 We define the address of the token from which we want to fetch the metadata and create the variables that will store the desired information.
 
