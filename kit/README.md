@@ -8,9 +8,7 @@ npm install @solana/kit borsh
 
 ## Token using the Token Metadata Standard
 
-According to the [Metaplex's docs](https://docs.metaplex.com/programs/token-metadata/overview#introduction), a token using the Token Metadata Standard is attached to a `Metadata Account` where the metadata (both on-chain and off-chain) are stored (among others token's name, symbol, logo, description). This `Metadata Account` is attached to the token `Mint Account` via a [Program Derived Address (PDA)](https://solanacookbook.com/core-concepts/pdas.html#facts). The seeds of this PDA are: the term 'metadata', the public key of the token metadata program and the public key of the token mint. Don't worry, there's no need to remember it since the Metaplex SDK can calculate it for us.
-
-When a token uses the Token Metadata Standard, we can easily retrieve its metadata using the Metaplex SDK. If we don't know in advance if the token uses the Token Metadata Standard, we only need to make sure in advance that the `Metadata Account` exists, otherwise we will get an error message.
+According to the [Metaplex's docs](https://docs.metaplex.com/programs/token-metadata/overview#introduction), a token using the Token Metadata Standard is attached to a `Metadata Account` where the metadata (both on-chain and off-chain) are stored (among others token's name, symbol, logo, description). This `Metadata Account` is attached to the token `Mint Account` via a [Program Derived Address (PDA)](https://solanacookbook.com/core-concepts/pdas.html#facts). The seeds of this PDA are: the term 'metadata', the public key of the token metadata program and the public key of the token mint. 
 
 We will show the entire code and then talk through what is going on.
 
