@@ -123,7 +123,7 @@ We create an encoder that we can use to encode a base58-encoded address to a byt
 ```
 We define the address of the `Token Metadata Program` and the struct of the portion of metadata stored in the `Metadata Account` that we will get.
 
-```typescrip
+```typescript
     const seed1 = Buffer.from("metadata");
     const seed2 = addressEncoder.encode(TOKEN_METADATA_PROGRAM);
     const seed3 = addressEncoder.encode(mint);
